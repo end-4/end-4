@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @end-4
-- 👀 GNOME User
-- 🌱 I’m currently digging in css files
+- 👀 Hyprland User (Previously GNOME)
+- 🌱 eww is cool
 
 <!---
 end-4/end-4 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
