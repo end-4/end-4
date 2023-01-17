@@ -1,5 +1,5 @@
 - 👋 Hi, I’m @end-4
-- 👀 Hyprland User (Previously GNOME)
+- 👀 Uses Distro: Fedora, WindowManager: Hyprland
 - 🌱 eww is cool
 
 <!---
