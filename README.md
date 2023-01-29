@@ -1,5 +1,5 @@
 - 👋 Hi, I’m @end-4
-- 👀 Uses Distro: ~~Fedora~~ EndeavourOS, WindowManager: Hyprland
+- 👀 Uses Distro: ~~Fedora~~ EndeavourOS, Desktop: ~~GNOME~~ Hyprland
 - 🌱 eww is cool
 
 <!---
