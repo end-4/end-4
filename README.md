@@ -1,6 +1,7 @@
-- 👋 Hi, I’m @end-4
-- 👀 I use EndeavourOS, Hyprland
-- 🌱 eww is cool
+## About me
+- I'm a Linux user
+- Maybe too much
+## Social 
 - end_4#7067
 - u/void1273
 
