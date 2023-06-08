@@ -1,6 +1,6 @@
 ## About me
-- I'm a Linux user
-- Maybe too much
+- I'm a Linux user. EndeavourOS + Hyprland.
+- I should touch grass, but the grass ran.
 ## Social 
 - end_4#7067
 - u/void1273
