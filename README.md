@@ -1,9 +1,9 @@
 ## About me
-- I'm a Linux user. EndeavourOS + Hyprland.
+- I'm a Linux user. EndeavourOS + Hyprland + Eww
 - I should touch grass, but the grass ran.
 ## Social 
-- end_4#7067
-- u/void1273
+- discord: @end_4
+- reddit u/void1273
 
 <!---
 end-4/end-4 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
