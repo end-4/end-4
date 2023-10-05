@@ -1,5 +1,5 @@
 ## About me
-- I'm a Linux user. EndeavourOS + Hyprland + Eww
+- I'm a Linux user. EndeavourOS + [Hyprland](https://github.com/hyprwm/hyprland) + [AGS](https://github.com/Aylur/ags/)
 - I should touch grass, but the grass ran.
 ## Social 
 - discord: @end_4
