@@ -1,6 +1,7 @@
 ## About me
 - I'm a Linux user. EndeavourOS + [Hyprland](https://github.com/hyprwm/hyprland) + [AGS](https://github.com/Aylur/ags/)
 - I should touch grass, but the grass ran.
+- 🌱 Learning NixOS
 ## Social 
 - discord: @end_4
 - reddit u/void1273
