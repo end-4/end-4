@@ -1,6 +1,6 @@
-## About me
-- I'm a Linux user. [CachyOS](https://cachyos.org/) + [Hyprland](https://github.com/hyprwm/hyprland) + [AGS](https://github.com/Aylur/ags/)
-- I should touch grass, but the grass ran.
+## About me(me)
+- i use lincox. [Hyprland](https://github.com/hyprwm/hyprland) + [AGS](https://github.com/Aylur/ags/) very cool hehe
+- i should touch grass, but the grass ran.
 ## Social 
 - discord: @end_4
 - reddit u/void1273
