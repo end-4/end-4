@@ -16,8 +16,8 @@ pacman -Q firefox && sudo pacman -Rns firefox --noconfirm
 echo '[[ Chaotic AUR ]]'
 sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
 sudo pacman-key --lsign-key 3056513887B78AEB
-sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst'
-sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
+sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' --noconfirm
+sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst' --noconfirm
 sudo echo -e "\n[chaotic-aur]\nInclude = /etc/pacman.d/chaotic-mirrorlist\n" | sudo tee -a /etc/pacman.conf
 
 echo '[[ Installing stuff ]]'
@@ -59,7 +59,6 @@ nvidia-inst -p
 read -rp "Dotfiles? [y/n]: " install_dotfiles
 if [[ "$install_dotfiles" != "y" && "$install_dotfiles" != "Y" ]]; then
     echo "Skipping dotfiles installation."
-    exit 0
 else
     cd ~/Downloads
     git clone https://github.com/end-4/dots-hyprland.git
@@ -74,5 +73,5 @@ yay -Sc
 echo '[[ Setting up secure boot ]]'
 sudo grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=endeavouros --modules="tpm" --disable-shim-lock
 echo '[Action required] Go to firmware settings and reset/clear secure boot keys, then boot into the system and run install-finalize.sh'
-read -rp "[[ Press Enter to reboot, or Ctrl+C to cancel ]] "
+read -rp "[[ Press Enter to reboot, or Ctrl+C to cancel ]] " dummyVar
 systemctl reboot --firmware-setup
