@@ -54,6 +54,8 @@ sudo systemctl enable ollama
 
 echo '[[ Nvidia ]]'
 nvidia-inst -p
+cp ./etc/dracut.conf.d/force-i915.conf /etc/dracut.conf.d/force-i915.conf
+sudo dracut-rebuild
 
 ############# USER ###############
 
