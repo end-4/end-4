@@ -12,6 +12,7 @@ read dummyVar
 echo '[[ Nuking stuff ]]'
 pacman -Q vi && sudo pacman -Rns vi --noconfirm
 pacman -Q firefox && sudo pacman -Rns firefox --noconfirm
+pacman -Q power-profiles-daemon && sudo pacman -Rnsdd power-profiles-daemon --noconfirm
 
 echo '[[ Chaotic AUR ]]'
 sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
@@ -32,6 +33,7 @@ yay -Syyu --needed --noconfirm \
     github-cli github-desktop-bin \
     ollama-cuda \
     mpv ani-cli \
+    powertop tlp \
     sddm sddm-kcm breeze \
     zram-generator
 
@@ -51,6 +53,9 @@ sudo systemctl enable sddm
 
 echo '[[ Ollama ]]'
 sudo systemctl enable ollama
+
+echo '[[ TLP ]]'
+sudo systemctl enable tlp
 
 echo '[[ Nvidia ]]'
 nvidia-inst -p
