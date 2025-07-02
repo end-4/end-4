@@ -62,6 +62,9 @@ nvidia-inst -p
 cp ./etc/dracut.conf.d/force-i915.conf /etc/dracut.conf.d/force-i915.conf
 sudo dracut-rebuild
 
+echo '[[ Time sync with Windows ]]'
+sudo timedatectl set-local-rtc 1
+
 ############# USER ###############
 
 # Install dotfiles
