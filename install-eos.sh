@@ -35,7 +35,9 @@ yay -Syyu --needed --noconfirm \
     mpv ani-cli \
     powertop tlp \
     sddm sddm-kcm breeze \
-    zram-generator
+    zram-generator \
+    fcitx5 fcitx5-unikey fcitx5-configtool \
+    easyeffects easyeffects-bundy01-presets
 
 echo '[[ zram setup ]]'
 sudo cp ./etc/systemd/zram-generator.conf /etc/systemd/zram-generator.conf
@@ -57,6 +59,9 @@ sudo systemctl enable ollama
 echo '[[ TLP ]]'
 sudo systemctl enable tlp
 
+echo '[[ Bluetooth ]]'
+sudo systemctl enable bluetooth
+
 echo '[[ Nvidia ]]'
 nvidia-inst -p
 cp ./etc/dracut.conf.d/force-i915.conf /etc/dracut.conf.d/force-i915.conf
@@ -64,6 +69,11 @@ sudo dracut-rebuild
 
 echo '[[ Time sync with Windows ]]'
 sudo timedatectl set-local-rtc 1
+
+echo '[[ fcitx5 ]]'
+mkdir -p ~/.config/fcitx5
+cp ./.config/fcitx5/profile ~/.config/fcitx5/profile
+cp ./.config/fcitx5/config ~/.config/fcitx5/config
 
 ############# USER ###############
 
