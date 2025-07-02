@@ -37,7 +37,8 @@ yay -Syyu --needed --noconfirm \
     sddm sddm-kcm breeze \
     zram-generator \
     fcitx5 fcitx5-unikey fcitx5-configtool \
-    easyeffects easyeffects-bundy01-presets
+    easyeffects easyeffects-bundy01-presets \
+    lib32-nvidia-utils steam
 
 echo '[[ zram setup ]]'
 sudo cp ./etc/systemd/zram-generator.conf /etc/systemd/zram-generator.conf
