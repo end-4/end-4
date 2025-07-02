@@ -35,7 +35,7 @@ yay -Syyu --needed --noconfirm \
     mpv ani-cli \
     powertop tlp \
     sddm sddm-kcm breeze \
-    zram-generator \
+    zram-generator htop \
     fcitx5 fcitx5-unikey fcitx5-configtool \
     easyeffects easyeffects-bundy01-presets \
     lib32-nvidia-utils steam \
