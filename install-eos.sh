@@ -29,7 +29,8 @@ yay -Syyu --needed --noconfirm \
     linux-clear-bin linux-clear-headers-bin \
     nvidia-inst \
     google-chrome \
-    dolphin ark filelight kate visual-studio-code-bin \
+    dolphin ark filelight kolourpaint \
+    kate visual-studio-code-bin \
     github-cli github-desktop-bin \
     ollama-cuda \
     mpv ani-cli \
@@ -39,6 +40,7 @@ yay -Syyu --needed --noconfirm \
     fcitx5 fcitx5-unikey fcitx5-configtool \
     easyeffects easyeffects-bundy01-presets \
     lib32-nvidia-utils steam \
+    upscayl-bin
 
 echo '[[ zram setup ]]'
 sudo cp ./etc/systemd/zram-generator.conf /etc/systemd/zram-generator.conf
