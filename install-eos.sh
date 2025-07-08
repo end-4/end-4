@@ -33,14 +33,15 @@ yay -Syyu --needed --noconfirm \
     kate visual-studio-code-bin \
     github-cli github-desktop-bin \
     ollama-cuda \
-    mpv ani-cli \
+    mpv vlc ani-cli \
     powertop tlp \
     sddm sddm-kcm breeze \
     zram-generator htop \
     fcitx5 fcitx5-unikey fcitx5-configtool \
     easyeffects easyeffects-bundy01-presets \
     lib32-nvidia-utils steam \
-    upscayl-bin
+    upscayl-bin tokei \
+    cloudflare-warp-bin
 
 echo '[[ zram setup ]]'
 sudo cp ./etc/systemd/zram-generator.conf /etc/systemd/zram-generator.conf
@@ -77,6 +78,9 @@ echo '[[ fcitx5 ]]'
 mkdir -p ~/.config/fcitx5
 cp ./.config/fcitx5/profile ~/.config/fcitx5/profile
 cp ./.config/fcitx5/config ~/.config/fcitx5/config
+
+echo '[[ Cloudflare Warp ]]'
+sudo systemctl enable warp-svc
 
 ############# USER ###############
 
