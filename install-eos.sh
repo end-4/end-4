@@ -68,7 +68,8 @@ sudo systemctl enable bluetooth
 
 echo '[[ Nvidia ]]'
 nvidia-inst -p
-cp ./etc/dracut.conf.d/force-i915.conf /etc/dracut.conf.d/force-i915.conf
+sudo cp ./etc/dracut.conf.d/force-i915.conf /etc/dracut.conf.d/force-i915.conf
+# sudo cp ./etc/dracut.conf.d/vfio.conf /etc/dracut.conf.d/vfio.conf
 sudo dracut-rebuild
 
 echo '[[ Time sync with Windows ]]'
@@ -94,6 +95,11 @@ else
     cd dots-hyprland
     ./install.sh
 fi
+
+# Copy mpv config
+echo '[[ mpv ]]'
+mkdir -p ~/.config/mpv
+cp ./.config/mpv/* ~/.config/mpv/
 
 # Clear cache
 echo '[[ Clearing cache ]]'
