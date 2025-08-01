@@ -107,6 +107,6 @@ yay -Sc
 
 echo '[[ Setting up secure boot ]]'
 sudo grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=endeavouros --modules="tpm" --disable-shim-lock
-echo '[Action required] Go to firmware settings and reset/clear secure boot keys, then boot into the system and run install-finalize.sh'
+echo '[Action required] Go to firmware settings and reset/clear secure boot keys, then boot into the system and run install-finalize-eos.sh'
 read -rp "[[ Press Enter to reboot, or Ctrl+C to cancel ]] " dummyVar
 systemctl reboot --firmware-setup
