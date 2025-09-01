@@ -48,10 +48,10 @@ yay -Syyu --needed --noconfirm \
     upscayl-bin tokei \
     cloudflare-warp-bin
 
-# echo '[[ zram setup ]]'
-# sudo cp ./etc/systemd/zram-generator.conf /etc/systemd/zram-generator.conf
-# sudo systemctl daemon-reload
-# sudo systemctl start /dev/zram0
+echo '[[ zram setup ]]'
+sudo cp ./etc/systemd/zram-generator.conf /etc/systemd/zram-generator.conf
+sudo systemctl daemon-reload
+sudo systemctl start /dev/zram0
 
 echo '[[ Grub ]]'
 sudo cp ./etc/default/grub /etc/default/grub
