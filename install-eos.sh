@@ -23,10 +23,15 @@ if ! grep -q '^\[chaotic-aur\]' /etc/pacman.conf; then
     echo -e "\n[chaotic-aur]\nInclude = /etc/pacman.d/chaotic-mirrorlist\n" | sudo tee -a /etc/pacman.conf
 fi
 
+echo '[[ CachyOS Repos ]]'
+curl https://mirror.cachyos.org/cachyos-repo.tar.xz -o cachyos-repo.tar.xz
+tar xvf cachyos-repo.tar.xz && cd cachyos-repo
+sudo ./cachyos-repo.sh
+
 echo '[[ Installing stuff ]]'
 yay -Syyu --needed --noconfirm \
     sbctl \
-    linux-clear-bin linux-clear-headers-bin \
+    linux-cachyos linux-cachyos-nvidia \
     nvidia-inst \
     google-chrome \
     dolphin ark filelight kolourpaint \
