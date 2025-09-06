@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo 'Absolutely personal install script for a fresh EndeavourOS system.'
+echo 'Absolutely personal install script for a fresh Nyarch system.'
 echo 'Public for accessibility, not public use. NO contribution will be accepted.'
 echo 'THIS CAN NUKE YOUR STUFF, YOU HAVE BEEN WARNED.'
 printf '[[ Enter to continue ]] '
