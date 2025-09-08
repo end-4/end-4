@@ -13,6 +13,7 @@ echo '[[ Nuking stuff ]]'
 pacman -Q vi && sudo pacman -Rns vi --noconfirm
 pacman -Q firefox && sudo pacman -Rns firefox --noconfirm
 pacman -Q power-profiles-daemon && sudo pacman -Rnsdd power-profiles-daemon --noconfirm
+pacman -Q noto-fonts-emoji && sudo pacman -Rns noto-fonts-emoji --noconfirm
 
 echo '[[ Chaotic AUR ]]'
 sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
