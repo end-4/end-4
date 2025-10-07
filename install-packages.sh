@@ -1,0 +1,81 @@
+#!/usr/bin/env bash
+
+echo '[[ Nuking stuff ]]'
+pacman -Q vi && sudo pacman -Rns vi --noconfirm
+pacman -Q firefox && sudo pacman -Rns firefox --noconfirm
+pacman -Q power-profiles-daemon && sudo pacman -Rnsdd power-profiles-daemon --noconfirm
+pacman -Q noto-fonts-emoji && sudo pacman -Rns noto-fonts-emoji --noconfirm
+
+echo '[[ Chaotic AUR ]]'
+sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
+sudo pacman-key --lsign-key 3056513887B78AEB
+sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' --noconfirm
+sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst' --noconfirm
+if ! grep -q '^\[chaotic-aur\]' /etc/pacman.conf; then
+    echo -e "\n[chaotic-aur]\nInclude = /etc/pacman.d/chaotic-mirrorlist\n" | sudo tee -a /etc/pacman.conf
+fi
+
+echo '[[ CachyOS Repos ]]'
+curl https://mirror.cachyos.org/cachyos-repo.tar.xz -o cachyos-repo.tar.xz
+tar xvf cachyos-repo.tar.xz && cd cachyos-repo
+sudo ./cachyos-repo.sh
+
+echo '[[ Installing stuff ]]'
+yay -Syyu --needed --noconfirm \
+    sbctl \
+    linux-cachyos linux-cachyos-nvidia \
+    nvidia-inst \
+    google-chrome \
+    dolphin ark filelight kolourpaint \
+    kate visual-studio-code-bin \
+    github-cli github-desktop-bin \
+    ollama-cuda \
+    mpv vlc ani-cli \
+    powertop tlp \
+    sddm sddm-kcm breeze \
+    zram-generator htop \
+    fcitx5 fcitx5-unikey fcitx5-configtool \
+    easyeffects easyeffects-bundy01-presets \
+    lib32-nvidia-utils steam \
+    upscayl-bin tokei \
+    cloudflare-warp-bin
+
+echo '[[ zram setup ]]'
+sudo cp ./etc/systemd/zram-generator.conf /etc/systemd/zram-generator.conf
+sudo systemctl daemon-reload
+sudo systemctl start /dev/zram0
+
+echo '[[ Grub ]]'
+sudo cp ./etc/default/grub /etc/default/grub
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+echo '[[ SDDM ]]'
+sudo mkdir -p /etc/sddm.conf.d
+sudo cp ./etc/sddm.conf /etc/sddm.conf
+sudo systemctl enable sddm
+
+echo '[[ Ollama ]]'
+sudo systemctl enable ollama
+
+echo '[[ TLP ]]'
+sudo systemctl enable tlp
+
+echo '[[ Bluetooth ]]'
+sudo systemctl enable bluetooth
+
+echo '[[ Nvidia ]]'
+nvidia-inst -p
+sudo cp ./etc/dracut.conf.d/force-i915.conf /etc/dracut.conf.d/force-i915.conf
+# sudo cp ./etc/dracut.conf.d/vfio.conf /etc/dracut.conf.d/vfio.conf
+sudo dracut-rebuild
+
+echo '[[ Time sync with Windows ]]'
+sudo timedatectl set-local-rtc 1
+
+echo '[[ fcitx5 ]]'
+mkdir -p ~/.config/fcitx5
+cp ./.config/fcitx5/profile ~/.config/fcitx5/profile
+cp ./.config/fcitx5/config ~/.config/fcitx5/config
+
+echo '[[ Cloudflare Warp ]]'
+sudo systemctl enable warp-svc
