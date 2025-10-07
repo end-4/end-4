@@ -102,10 +102,7 @@ else
     ./install.sh
 fi
 
-# Copy mpv config
-echo '[[ mpv ]]'
-mkdir -p ~/.config/mpv
-cp ./.config/mpv/* ~/.config/mpv/
+./install-real-dotfiles.sh
 
 # Clear cache
 echo '[[ Clearing cache ]]'

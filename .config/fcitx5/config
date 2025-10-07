@@ -18,9 +18,6 @@ ModifierOnlyKeyTimeout=250
 [Hotkey/EnumerateGroupForwardKeys]
 0=Super+space
 
-[Hotkey/EnumerateGroupBackwardKeys]
-0=Shift+Super+space
-
 [Hotkey/ActivateKeys]
 0=Hangul_Hanja
 
