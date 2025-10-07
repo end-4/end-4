@@ -9,4 +9,6 @@ cp ./.config/mpv/* ~/.config/mpv/
 echo '[[ fcitx5 ]]'
 mkdir -p ~/.config/fcitx5
 cp -r ./.config/fcitx5/* ~/.config/fcitx5/
+
 cp ./.config/hypr/custom/env.conf ~/.config/hypr/custom/env.conf
+cp ./.config/hypr/custom/execs.conf ~/.config/hypr/custom/execs.conf
