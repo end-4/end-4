@@ -12,3 +12,7 @@ cp -r ./.config/fcitx5/* ~/.config/fcitx5/
 
 cp ./.config/hypr/custom/env.conf ~/.config/hypr/custom/env.conf
 cp ./.config/hypr/custom/execs.conf ~/.config/hypr/custom/execs.conf
+
+# Fix weird default apps
+echo '[[ Making directories not open with fucking kitty ]]'
+xdg-mime default org.kde.dolphin.desktop inode/directory
