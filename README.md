@@ -4,5 +4,5 @@
 - I use vscode
 
 ## Social 
-- Discord: `@end_4`, `@yesiam13579`
+- Discord: `@end_4`, `@__n4a`
 - Reddit: u/void1273
