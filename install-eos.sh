@@ -9,7 +9,11 @@ read -rp "[[ Enter to continue ]] " _dummyVar
 
 ############# SYSTEM ###############
 
+echo '[[ Installing packages ]]'
 ./install-packages.sh
+
+echo '[[ Tweaking internet ]]'
+sudo ./DidntWriteMyself/change-dns.sh
 
 ############# USER ###############
 
