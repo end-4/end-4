@@ -15,6 +15,18 @@ echo '[[ Installing packages ]]'
 echo '[[ Tweaking internet ]]'
 sudo ./DidntWriteMyself/change-dns.sh
 
+echo '[[ X11 touchpad scroll direction fix ]]'
+X11_TOUCHPAD_CONF_DIR="/etc/X11/xorg.conf.d"
+X11_TOUCHPAD_CONF_FILE="$X11_TOUCHPAD_CONF_DIR/30-touchpad.conf"
+sudo tee "$X11_TOUCHPAD_CONF_FILE" > /dev/null << 'EOF'
+Section "InputClass"
+    Identifier "touchpad"
+    MatchIsTouchpad "on"
+    Driver "libinput"
+    Option "NaturalScrolling" "true"
+EndSection
+EOF
+
 ############# USER ###############
 
 # Install dotfiles
